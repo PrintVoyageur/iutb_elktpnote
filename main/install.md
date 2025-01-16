@@ -17,6 +17,7 @@ Commencez par créer un répertoire de travail dans `/root/TP` et clonez le repo
 ```bash
 mkdir /root/TP
 cd /root/TP
+
 git clone https://github.com/PrintVoyageur/iutb_elktpnote.git
 ```
 
@@ -35,6 +36,8 @@ Vérifiez la configuration des réseaux :
 ``` bash
 docker network inspect monitoring
 ```
+
+[]
 
 ##  3. Construire l'image Docker
 
