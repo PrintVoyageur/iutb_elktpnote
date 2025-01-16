@@ -37,7 +37,7 @@ Vérifiez la configuration des réseaux :
 docker network inspect monitoring
 ```
 
-[]
+- []
 
 ##  3. Construire l'image Docker
 
