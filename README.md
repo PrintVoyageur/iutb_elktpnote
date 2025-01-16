@@ -25,4 +25,5 @@ Cloner le dépôt
 Clonez ce projet sur votre machine locale à l'aide de la commande Git suivante :
 
 ```bash
-git clone https://github.com/beuneche/iutb_elktpnote.git
+
+git clone https://github.com/PrintVoyageur/iutb_elktpnote.git
