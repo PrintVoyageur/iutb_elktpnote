@@ -37,8 +37,6 @@ Vérifiez la configuration des réseaux :
 docker network inspect monitoring
 ```
 
-- []
-
 ##  3. Construire l'image Docker
 
 Construisez l'image Debian à partir du Dockerfile dans le répertoire cloné.
