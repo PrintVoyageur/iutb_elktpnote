@@ -17,3 +17,11 @@ Avant d'exécuter ce projet, vous devez avoir installé :
 
 - **Docker** et **Docker Compose** sur votre machine.
 - Une connexion à Internet pour télécharger les images Docker nécessaires.
+  
+## Installation
+
+Pour une installation complète du projet, suivez les étapes détaillées dans le guide d'installation :
+
+[installer le projet complet][def]
+
+[def]: /main/install.md
