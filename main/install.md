@@ -168,3 +168,16 @@ Pull d'Elasticsearch et Lancement du Conteneur
 docker pull docker.elastic.co/elasticsearch/elasticsearch:8.12.0
 docker run --name es01 --net monitoring --ip 172.25.1.3 -p 9200:9200 -it -m 1GB --restart always -d docker.elastic.co/elasticsearch/elasticsearch:8.12.0
 ```
+
+##  13. Installer Kibana
+
+Pull de Kibana et Lancement du Conteneur
+
+``` bash
+docker pull docker.elastic.co/kibana/kibana:8.12.0
+docker run --name kib01 --net monitoring --ip 172.25.1.2 -p 5601:5601 --restart always -d docker.elastic.co/kibana/kibana:8.12.0
+```
+
+## 14. Configurer Kibana et Vérifier les Logs
+
+Accédez à Kibana à l'adresse http://localhost:5601 et configurez les index de Logstash. Vous pouvez maintenant surveiller les logs Apache et iptables via Kibana.
