@@ -140,6 +140,8 @@ Configuration de Filebeat
 
 Dans le conteneur **webserver** et **parefeu**, activez le module **apache** et **iptables** de Filebeat.
 
+[filebeat configuration][def2]
+
 ``` bash
 /etc/init.d/filebeat start
 ```
@@ -227,3 +229,4 @@ docker run --name kib01 --net monitoring --ip 172.25.1.2 -p 5601:5601 --restart 
 Accédez à Kibana à l'adresse http://localhost:5601 et configurez les index de Logstash. Vous pouvez maintenant surveiller les logs Apache et iptables via Kibana.
 
 [def]: logstash.conf
+[def2]: filebeat.md
