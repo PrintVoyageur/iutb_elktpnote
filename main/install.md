@@ -160,6 +160,50 @@ apt-get update && apt-get install logstash
 
 Configurez Logstash pour recevoir les logs de Filebeat et les envoyer vers Elasticsearch.
 
+``` conf
+input {
+  beats {
+    port => 5044
+    ssl => false
+  }
+}
+
+filter {
+  if "apache2" in [tags] {
+    grok {
+      match => { "message" => "%{COMMONAPACHELOG}" }
+    }
+    date {
+      match => [ "timestamp", "dd/MMM/yyyy:HH:mm:ss Z" ]
+    }
+  }
+  if "iptables" in [tags] {
+    grok {
+      match => { "message" => "%{SYSLOGTIMESTAMP} %{IPV4:src_ip} %{IPV4:dst_ip} %{DATA:protocol} %{INT:src_port} %{INT:dst_port} %{GREEDYDATA:message}" }
+    }
+    date {
+      match => [ "timestamp", "MMM dd HH:mm:ss" ]
+    }
+  }
+}
+
+output {
+  elasticsearch {
+    hosts => ["https://172.25.1.3:9200"]
+    api_key => "5azBTo0B8rYY2xVWFMHj:7XKm4qJ4RLSTGNVkn1uUOw"
+    ssl => true
+    cacert => "/opt/ca.crt"
+    index => "apache2-%{+YYYY.MM.dd}"
+    user => "elastic"
+    password => "${y9Tep_UHOs2b9JEdJzBH}"
+  }
+}
+
+```
+[installer le projet complet][def]
+
+
+
 ## 12. Installer Elasticsearch
 
 Pull d'Elasticsearch et Lancement du Conteneur
@@ -181,3 +225,5 @@ docker run --name kib01 --net monitoring --ip 172.25.1.2 -p 5601:5601 --restart 
 ## 14. Configurer Kibana et Vérifier les Logs
 
 Accédez à Kibana à l'adresse http://localhost:5601 et configurez les index de Logstash. Vous pouvez maintenant surveiller les logs Apache et iptables via Kibana.
+
+[def]: /logstash.conf
