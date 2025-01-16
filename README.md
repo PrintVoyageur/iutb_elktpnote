@@ -17,13 +17,3 @@ Avant d'exécuter ce projet, vous devez avoir installé :
 
 - **Docker** et **Docker Compose** sur votre machine.
 - Une connexion à Internet pour télécharger les images Docker nécessaires.
-  
-## Installation
-
-Cloner le dépôt
-
-Clonez ce projet sur votre machine locale à l'aide de la commande Git suivante :
-
-```bash
-
-git clone https://github.com/PrintVoyageur/iutb_elktpnote.git
